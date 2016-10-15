@@ -1,0 +1,172 @@
+.introScreenContainer {
+    background-color : rgb(0, 181, 236);
+    height : 100vh;
+    width : 100vw;
+    z-index : 9;
+}
+.signUpScreen {
+    background-color : #F6F6F6;
+    height : 100vh;
+    width : 100vw;
+    z-index : 9;
+}
+.downButton {
+    position : absolute;
+    background-color : yellow;
+    border-radius : 100% 100% 100% 100%;
+    width : 80px;
+    height : 80px;
+    z-index : 10;
+    top : 75vh;
+    left : calc(50vw - 40px);
+    font-size : 35px;
+    text-align : center;
+}
+.downtoSignInScreen {
+    position : relative;
+    top : 30%;
+    padding : 0;
+    margin : 0;
+}
+.sideFloatingPanel {
+    position : fixed;
+    left : 70vw;
+    z-index : 10;
+    top : 10vh;
+    padding : 10px;
+    font-size : 30px;
+    color : white;
+    -webkit-transition : color 0.5s ease;
+    -moz-transition : color 0.5s ease
+    -o-transition : color 0.5s ease;
+    transition: color 0.5s ease;
+}
+.iconSpacing{
+    margin : 15px;
+}
+.introPanel{
+    position : absolute;
+    top : 40vh;
+    left : 15vw;
+    width : 35vw;
+    font-size : 40px;
+    font-family : Georgia, "Times New Roman", serif;
+    color : white;
+}
+.signUpMessage{
+    position : absolute;
+    font-size : 25px;
+    color : white;
+    top : calc(75vh + 40px);
+    left : 15vw;
+}
+.seperateMessage{
+    position : relative;
+    margin-left : 50px;
+    margin-right : 15px;
+}
+.signInContainer{
+    position : absolute;
+    top : 40vh !important;
+    left : 65vw !important;
+    width : 19vw !important;
+}
+#signUpImage {
+    position : absolute;
+    left : 15px;
+    top : calc(100vh + 20vh);
+}
+#signUpDescription {
+    position : absolute;
+    color : rgb(0, 181, 236);
+	font-family : Georgia, "Time New Roman", serif;
+    font-size : 25px;
+    top : calc(100vh + 60vh);
+    left : 30vw;
+    width : 600px;
+}
+#signUpForm {
+    position : absolute;
+    right : 10vw;
+    top : calc(100vh + 30vh);
+}
+.form-register{
+    max-width : 500px;
+    padding : 10px 20px;
+    background : #f4f7f8;
+    margin : 10px auto;
+    padding : 20px;
+    background : #f4f7f8;
+    border : 1px black solid;
+    border-radius : 8px;
+    font-family : Georgia, "Times New Roman", serif;
+}
+.form-register fieldset{
+    border : none;
+}
+.form-register legend {
+    font-size : 1.4em;
+    margin-bottom : 10px;
+}
+.form-register label {
+    display : block;
+    margin-bottom : 8px;
+}
+.form-register input[type="text"],
+.form-register input[type="number"],
+.form-register input[type="email"],
+.form-register input[type="password"] {
+    font-family : Georgia, "Times New Roman", serif;
+    background : rgba(255,255,255,0.1);
+    border : none;
+    border-radius : 4px;
+    font-size : 16px;
+    margin : 0;
+    outline : 0;
+    padding : 7px;
+    width : 100%;
+    box-sizing : border-box;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing : border-box;
+    background-color : #e8eeef;
+    color : #8a97a0;
+    -webkit-box-shadow : 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow : 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom : 30px;
+}
+.form-register input[type="text"],
+.form-register input[type="number"],
+.form-register input[type="email"],
+.form-register input[type="password"] {
+    background : #d2d9dd;
+}
+.form-register .sectionNumber {
+	background : #1abc9c;
+    color : #fff;
+    height : 30px;
+    width : 30px;
+    display : inline-block;
+    font-size : 0.8em;
+    margin-right : 4px;
+    line-height : 30px;
+    text-align : center;
+    text-shadow : 0 1px 0 rgba(255,255,255,0.2);
+    border-radius : 15px 15px 15px 0px;
+}
+.form-register input[type="submit"] {
+    position : relative;
+    display : block;
+    padding : 19px 39px 18px 39px;
+    color : #FFF;
+    margin : 0 auto;
+    background : rgb(0, 181, 236);
+    font-size : center;
+    font-style : normal;
+    width : 100%;
+    border : 1px solid #16a085;
+    border-width : 1px 1px 3px;
+    margin-bottom : 10px;
+}
+.form-register input[type="submit"] {
+    background : #109177
+}

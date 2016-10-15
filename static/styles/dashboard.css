@@ -1,0 +1,247 @@
+* {
+	margin : 0;
+	padding : 0;
+	box-sizing: border-box;
+}
+
+div#header{
+	width : 100%;
+	height : 50px;
+	background-color : #2c3e50;
+	margin : 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+.logo {
+	float : left;
+	margin-top : 10px;
+	margin-left : 15px;
+}
+
+.logo a{
+	font-size : 1.3em;
+	color : #fff;
+}
+
+.logo a span{
+	font-weight: 300;
+}
+
+div#container{
+	width : 100%;
+	margin : 0 auto;
+}
+
+.sidebar{
+	width : 250px;
+	height : 100%;
+	background-color: #34495e;
+	float : left;
+}
+
+.content{
+	width : auto;
+	margin-left : 250px;
+	height : 100%;
+	padding: 15px;
+}
+
+.content p {
+	color: #424242;
+	font-size : 1.2em;
+}
+
+.cardContainer {
+	perspective: 250;
+}
+
+
+.card {
+	position: relative;
+	color : white;
+	text-align : center;
+	margin : 20px;
+	background : #5677fc;
+	width : 200px;
+	height : 200px;
+	transition : all 0.6s ease;
+	transform-style: preserve-3d;
+	float : left;
+}
+
+.graphContainer{
+	width : 1000px !important;
+	height : 200px !important;
+	background-color: #fff;
+	color : black;
+}
+
+.front, .back {
+	top : 0;
+	left : 0;
+	width : 200px;
+	height : 200px;
+	position: absolute;
+	backface-visibility: hidden !important;
+	-webkit-backface-visibility: hidden;
+}
+
+.front img{
+	margin-top : 30px;
+	backface-visibility: hidden !important;
+}
+
+.front img : hover {
+	opacity : 0;
+}
+
+.back{
+	margin-top : 100px;
+	transform: rotateY(180deg);
+}
+
+.back h1 {
+	margin : 0;
+}
+.card:hover {
+	transform : rotateY(180deg);
+}
+
+ul#nav li{
+	list-style: none;
+}
+
+ul#nav li a{
+	color: #1abc9c;
+	display: block;
+	padding: 12px;
+	font-size: 1.2em;
+	border-bottom : 1px solid #16a085;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+
+
+ul#nav li a:hover {
+	color : #fff;
+	padding-left : 30px;
+}
+
+.stickyNotes{
+	position: absolute;
+	width : 30%;
+	height : 700px;
+	right : 10px;
+  	font-family:arial,sans-serif;
+  	font-size:100%;
+  	margin:1.5em;
+  	background:#666;
+  	color:#fff;
+  	float : left;
+}
+.stickyNotes h2, .stickyNotes p{
+  	font-size:100%;
+  	font-weight:normal;
+}
+.stickyNotes ul,.stickyNotes li{
+  	list-style:none;
+}
+.stickyNotes ul{
+  	overflow:hidden;
+  	padding:3em;
+}
+.stickyNotes ul li a{
+  	text-decoration:none;
+  	color:#000;
+  	background:#ffc;
+  	display:block;
+  	height:10em;
+  	width:10em;
+  	padding:1em;
+}
+
+.stickyNotes ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+}
+
+.stickyNotes ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+}
+.stickyNotes li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+.stickyNotes ul li h2{
+	font-size : 140%;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.stickyNotes ul li p{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size : 180%;
+}
+.stickyNotes ul li{
+  	margin:1em;
+  	float:left;
+}
+
+.stickyNotes ul li a:hover,ul li a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+.stickyNotes ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+
+.stickyNotes ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+
+.stickyNotes ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
