@@ -4,8 +4,8 @@
 	<head>
 		<title>CAB</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href='{% static "styles/dashboard.css" %}'>
-		<link rel="stylesheet" href='{% static "styles/chartist.min.css" %}'>
+		<link rel="stylesheet" href='{% static "styles/dashboardStyle.css" %}'>
+		<script src='{% static "scripts/jquery-git2.min.js" %}'></script>
 	</head>
 	<body>
 		<div id="header">
@@ -15,108 +15,130 @@
 				</a>
 			</div>
 		</div>
-		<div id="container">
-			<div class="sidebar">
-				<ul id="nav">
-					<li><a href="#">Search</a></li>
-					<li><a href="#">Account</a></li>
-					<li><a href="{% url 'userLogout' %}">Sign Out</a></li>
-				</ul>
+		<div class="dashboard-wrapper">
+			<div class = "r-page item-sell-page">
+				<div class= "page-content">
+					<h2 class ="page-header">Sell Item Window</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tu istuc dixti bene Latine, parum plane. Quicquid porro animo cernimus, id omne oritur a sensibus; Intrandum est igitur in rerum naturam et penitus quid ea postulet pervidendum; Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant. Quid ergo attinet gloriose loqui, nisi constanter loquare? Duo Reges: constructio interrete. Ille enim occurrentia nescio quae comminiscebatur; Quid ei reliquisti, nisi te, quoquo modo loqueretur, intellegere, quid diceret? At miser, si in flagitiosa et vitiosa vita afflueret voluptatibus. Si quicquam extra virtutem habeatur in bonis.
+
+Quod ea non occurrentia fingunt, vincunt Aristonem; Tollenda est atque extrahenda radicitus. Non quaero, quid dicat, sed quid convenienter possit rationi et sententiae suae dicere. Praeteritis, inquit, gaudeo. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est. Vos autem cum perspicuis dubia debeatis illustrare, dubiis perspicua conamini tollere.
+
+Quem Tiberina descensio festo illo die tanto gaudio affecit, quanto L. Quae quidem sapientes sequuntur duce natura tamquam videntes; Hanc quoque iucunditatem, si vis, transfer in animum; Ego vero volo in virtute vim esse quam maximam; Facile est hoc cernere in primis puerorum aetatulis. Sedulo, inquam, faciam. Non enim, si omnia non sequebatur, idcirco non erat ortus illinc. Nemo igitur esse beatus potest.
+
+Nulla profecto est, quin suam vim retineat a primo ad extremum. Hoc loco tenere se Triarius non potuit. Is es profecto tu. An ea, quae per vinitorem antea consequebatur, per se ipsa curabit? Et certamen honestum et disputatio splendida! omnis est enim de virtutis dignitate contentio. His singulis copiose responderi solet, sed quae perspicua sunt longa esse non debent. Causa autem fuit huc veniendi ut quosdam hinc libros promerem. In his igitur partibus duabus nihil erat, quod Zeno commutare gestiret. Respondent extrema primis, media utrisque, omnia omnibus.
+
+Nam, ut paulo ante docui, augendae voluptatis finis est doloris omnis amotio. Sic enim censent, oportunitatis esse beate vivere. Non enim, si omnia non sequebatur, idcirco non erat ortus illinc. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Primum quid tu dicis breve? Putabam equidem satis, inquit, me dixisse. Cui Tubuli nomen odio non est? Quorum sine causa fieri nihil putandum est.
+</p>
+				</div>
+				<div class = "close-button r-close-button">X</div>
 			</div>
-			<div class="content">
-				<h1>Hi! {{ username }}</h1>
-				<div class="card-container">
-					<div class="card">
-						<div class="front">
-							<img src='{% static "img/deal.png" %}' alt="">
-						</div>
-						<div class="back">
-							<h1>Sell Items</h1>
-						</div>
-					</div>
+			<div class = "s-page objective-page">
+				<div class= "page-content">
+					<h2 class ="page-header">Current Objectives</h2>
 				</div>
-				<div class="card-container">
-					<div class="card">
-						<div class="front">
-							<img src='{% static "img/shopping-cart.svg" %}' alt="">
-						</div>
-						<div class="back">
-							<h1>Restock Inventory</h1>
-						</div>
-					</div>
+				<div class = "close-button s-close-button">X</div>
+			</div>
+			<div class = "s-page notification-page">
+				<div class= "page-content">
+					<h2 class ="page-header">Notifications</h2>
 				</div>
-				<div class="card-container">
-					<div class="card">
-						<div class="front">
-							<img src='{% static "img/tablet.png" %}' alt="">
-						</div>
-						<div class="back">
-							<h1>Reports</h1>
-						</div>
-					</div>
+				<div class = "close-button s-close-button">X</div>
+			</div>
+			<div class="r-page reports-page">
+				<div class="page-content">
+					<h2 class="page-header">Reports</h2>
 				</div>
-				<div class="card-container">
-					<div class="card">
-						<div class="front">
-							<img src='{% static "img/checklist.png" %}' alt="">
-						</div>
-						<div class="back">
-							<h1>Objectives</h1>
-						</div>
-					</div>
+				<div class="close-button r-close-button">X</div>
+			</div>
+			<div class = "r-page restock-page">
+				<div class="page-content">
+					<h2 class="page-header">Restock Inventory</h2>
 				</div>
-				<div class="card-container">
-					<div class="card graphContainer">
-						<div class="front">
-							<div class="ct-chart graphContainer"></div>
-						</div>
-						<div class="back graphContainer">
-							<h1>Graphs</h1>
-						</div>
-					</div>
+				<div class="close-button r-close-button">X</div>
+			</div>
+			<div class = "r-page recommendation-page">
+				<div class="page-content">
+					<h2 class="page-header">Recommendation Window</h2>
 				</div>
-				<div class="stickyNotes">
-				<ul>
- 			   		 <li>
-    					<a href="#">
-      						<h2>Title #1</h2>
-      						<p>Text Content #1</p>
-    					</a>
-  					</li>
-  					<li>
-    					<a href="#">
-      						<h2>Title #2</h2>
-      						<p>Text Content #2</p>
-    					</a>
-  					</li>
-  					<li>
-    					<a href="#">
-      						<h2>Title #3</h2>
-      						<p>Text Content #1</p>
-    					</a>
-  					</li>
-  					<li>
-    					<a href="#">
-      						<h2>Title #4</h2>
-      						<p>Text Content #2</p>
-    					</a>
-  					</li>
-  					<li>
-    					<a href="#">
-      						<h2>Title #5</h2>
-      						<p>Text Content #1</p>
-    					</a>
-  					</li>
-  					<li>
-    					<a href="#">
-      						<h2>Title #6</h2>
-      						<p>Text Content #2</p>
-    					</a>
-  					</li>
+				<div class="close-button r-close-button">X</div>
+			</div>
+			<div class = "s-page calender-page">
+				<div class="page-content">
+					<h2 class="page-header">Calender</h2>
+				</div>
+				<div class="close-button s-close-button">X</div>
+			</div>
+			<div class = "s-page alarm-page">
+				<div class="page-content">
+					<h2 class="page-header">Alarm</h2>
+				</div>
+				<div class="close-button s-close-button">X</div>
+			</div>
+			<div class = "r-page developers-page">
+				<div class="page-content">
+					<h2 class="page-header">Developers</h2>
+				</div>
+				<div class="close-button r-close-button">X</div>
+			</div>
+			<div class = "r-page account-page">
+				<div class="page-content">
+					<h2 class="page-header">Account</h2>
+				</div>
+				<div class="close-button r-close-button">X</div>
+			</div>
+
+
+			<div class="dashboard clearfix">
+				<ul class="tiles">
+					<div class="col1 clearfix">
+						<li class="tile tile-2Xbig tile-1 slideTextUp" data-page-type="r-page" data-page-name="item-sell-page">
+							<div><p>Start selling items</p></div>
+							<div><p>Click to open retail window</p></div>
+						</li>
+						<li class="tile tile-big tile-4 slideTextDown" data-page-type="r-page" data-page-name="reports-page">
+							<div><p>Reports</p></div>
+							<div><p>Click to open report window</p></div>
+						</li>
+					</div>
+					<div class="col2 clearfix">
+						<li class="tile tile-big tile-5 slideTextUp" data-page-type="r-page" data-page-name="restock-page">
+							<div><p>Restock items</p></div>
+							<div><p>Restock before it gets too late!</p></div>
+						</li>
+						<li class="tile tile-big tile-6 slideTextDown" data-page-type="r-page" data-page-name="recommendation-page">
+							<div><p>Recommendation Engine</p></div>
+							<div><p>Use our R-powered recommendation engine to maximize your profit!</p></div>
+						</li>
+						<li class="tile tile-big tile-10 slideTextDown" data-page-type="r-page" data-page-name="account-page">
+							<div><p>Account</p></div>
+							<div><p>Your account options!</p></div>
+						</li>
+					</div>
+					<div class="col3 clearfix">
+						<li class="tile tile-big tile-9 slideTextUp" data-page-type="r-page" data-page-name="developers-page">
+							<div><p>About developers</p></div>
+							<div><p>A organism which converts caffine into software!</p></div>
+						</li>
+						<li class="tile tile-small tile-2 slideTextLeft" data-page-type="s-page" data-page-name="objective-page">
+							<div><p>Objectives</p></div>
+							<div><p>Open Sticky notes</p></div>
+						</li>
+						<li class="tile tile-small last tile-3 slideTextRight" data-page-type="s-page" data-page-name="notification-page">
+							<div><p>Notifications</p></div>
+							<div><p>Open notifications!</p></div>
+						</li>
+						<li class="tile tile-small tile-7 slideTextLeft" data-page-type="s-page" data-page-name="calender-page">
+							<div><p>Calender</p></div>
+							<div><p>Keep track of your appointments!</p></div>
+						</li>
+						<li class="tile tile-small last tile-8 slideTextRight" data-page-type="s-page" data-page-name="alarm-page">
+							<div><p>Alarm</p></div>
+							<div><p>Keep track of time!</p></div>
+						</li>
+					</div>
 				</ul>
 			</div>
 		</div>
-		<script src='{% static "js/chartist.min.js" %}'></script>
-		<script src='{% static "js/graph.js" %}'></script>
+		<script src='{% static "scripts/dashboard.js" %}'></script>
 	</body>
 </html>

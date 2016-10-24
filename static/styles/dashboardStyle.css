@@ -1,0 +1,554 @@
+html {
+  height: 100%;
+  overflow : hidden;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+body {
+  margin : 0;
+  padding : 0;
+  width : 100%;
+  height : 100%;
+  background : url("../img/background.jpg") no-repeat;
+  font-family : sans-serif;
+  font-size : 16px;
+}
+
+div#header{
+  position : fixed;
+  width : 100%;
+  height : 50px;
+  background-color : #666;
+  margin : 0 auto;
+}
+
+.logo {
+  float : left;
+  margin-top : 10px;
+  margin-left : 15px;
+}
+
+.logo a{
+  font-size : 1.3em;
+  color : #fff;
+}
+
+.logo a span{
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none
+}
+
+
+.dashboard-wrapper {
+  padding : 2em .5em;
+  width : 100%;
+  height : calc(100% - 50px);
+  perspective: 3300px;
+  position : relative;
+}
+
+.dashboard {
+  margin :0 auto;
+  width : 100%;
+  height : 100%;
+  padding : 1em;
+  transform : translateX(200px);
+  opacity : 0;
+  animation: start 1s ease-out forwards;
+}
+
+@keyframes start {
+  0% {
+    transform: translateX(200px);
+    opacity : 0;
+  }
+  50% {
+    opacity : 1; 
+  }
+  100%{
+    transform : translateX(0px);
+    opacity : 1;
+  }
+}
+
+.close-button {
+  padding : 1px 1px 1px 1px;
+  font-size: 1.5em;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: .75em;
+  right: .75em;
+  cursor: pointer;
+  line-height: .8em;
+  text-align: center;
+}
+
+.fadeOutback {
+  -webkit-animation: fadeOutBack 0.3s ease-out 1 normal forwards;
+    -o-animation: fadeOutBack 0.3s ease-out 1 normal forwards;
+    animation: fadeOutBack 0.3s ease-out 1 normal forwards
+}
+
+.fadeInForward-1, .fadeInForward-2, .fadeInForward-3 {
+  opacity: 0;
+    -webkit-transform: translateZ(-5em) scale(0.75);
+    -ms-transform: translateZ(-5em) scale(0.75);
+    -o-transform: translateZ(-5em) scale(0.75);
+    transform: translateZ(-5em) scale(0.75);
+    -webkit-animation: fadeInForward .5s cubic-bezier(.03,.93,.43,.77) .4s normal forwards;
+    -o-animation: fadeInForward .5s cubic-bezier(.03,.93,.43,.77) .4s normal forwards;
+    animation: fadeInForward .5s cubic-bezier(.03,.93,.43,.77) .4s normal forwards
+}
+
+.fadeInForward-2 {
+  animation-delay: .55s;
+}
+
+.fadeInForward-3 {
+  animation-delay: .7s;
+}
+
+@keyframes fadeOutBack {
+  0% {
+    -webkit-transform: translateX(-2em) scale(1);
+    transform : translateX(-2em) scale(1);
+    opacity : 1;
+  }
+  70% {
+    -webkit-transform: translateX(-5em) scale(0.6);
+    transform : translateZ(-5em) scale(0.6);
+    opacity : 0.6;
+  }
+  95% {
+    -webkit-transform: translateX(-5em) scale(0.6);
+    transform : translateZ(-5em) scale(0.6);
+    opacity : 0.6;
+  }
+  100% {
+    -webkit-transform: translateX(-5em) scale(0);
+    transform : translateZ(-5em) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInForward {
+  0%{
+    -webkit-transform: translateZ(-5em) scale(0);
+    transform : translateZ(-5em) scale(0);
+    opacity : 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0em) scale(1);
+    transform : translateZ(0em) scale(1);
+    opacity : 1;
+  }
+}
+
+.r-page {
+  overflow : auto;
+  width : 100%;
+  height : calc(100% - 50px);
+  text-align : center;
+  font-size : 2em;
+  font-weight : 300;
+  position : absolute;
+  right : 0;
+  top : 0;
+  left : 0;
+  bottom : 0;
+  opacity : 0;
+  color : white;
+  z-index : 10;
+  padding : 10px;
+  -webkit-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  -o-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  -webkit-transform: rotateY(-90deg) translateZ(5em);
+  -ms-transform: rotateY(-90deg) translateZ(5em);
+  -o-transform: rotateY(-90deg) translateZ(5em);
+  transform: rotateY(-90deg) translateZ(5em);
+  z-index: -10;
+}
+
+.s-page {
+  color : white;
+  z-index : 10;
+  text-align : center;
+  font-size : 2em;
+  font-weight : 300;
+}
+
+.page-content{
+  overflow-y:auto;
+  height : 100%;
+  font-size : 6em;
+  padding : .6em;
+  text-align : left;
+}
+
+.s-page, .r-page {
+  background-color: white;
+  color : black;
+}
+
+.s-page {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  color: white;
+  text-align: center;
+  font-weight: 300;
+  z-index: 1
+}
+
+
+.s-page p {
+  font-size: 6em;
+  margin-top: 2em;
+  font-weight: 100;
+}
+
+.page-title {
+  margin : .25em 0;
+  font-weight : 100;
+  font-size :3em;
+  text-align : center;
+}
+
+.close-button {
+  font-size : 1.5em;
+  width : 1em;
+  height : 1em;
+  position : absolute;
+  top : .75em;
+  cursor : pointer;
+  line-height: .8em;
+  text-align : center;
+}
+
+.openpage {
+    -webkit-animation: rotatePageInFromRight 1s cubic-bezier(.66,.04,.36,1.03) 1 normal forwards;
+    -o-animation: rotatePageInFromRight 1s cubic-bezier(.66,.04,.36,1.03) 1 normal forwards;
+    animation: rotatePageInFromRight 1s cubic-bezier(.66,.04,.36,1.03) 1 normal forwards
+}
+
+.slidePageLeft {
+    opacity: 1;
+    -webkit-transform: rotateY(0) translateZ(0);
+    -ms-transform: rotateY(0) translateZ(0);
+    -o-transform: rotateY(0) translateZ(0);
+    transform: rotateY(0) translateZ(0);
+    -webkit-animation: slidePageLeft .8s ease-out 1 normal forwards;
+    -o-animation: slidePageLeft .8s ease-out 1 normal forwards;
+    animation: slidePageLeft .8s ease-out 1 normal forwards
+}
+
+.slidePageInFromLeft {
+  -webkit-animation: slidePageInFromLeft .8s cubic-bezier(.01,1,.22,.99) 1 0.25s normal forwards;
+  -o-animation: slidePageInFromLeft .8s cubic-bezier(.01,1,.22,.99) 1 0.25s normal forwards;
+  animation : slidePageInFromLeft .8s cubic-bezier(.01, 1, .22, .99) 1 0.25s normal forwards;
+}
+
+.slidePageBackLeft {
+  -webkit-animation: slidePageInFromLeft .8s cubic-bezier(.01,1,.22,.99) 1 0.25s normal forwards;
+    -o-animation: slidePageInFromLeft .8s cubic-bezier(.01,1,.22,.99) 1 0.25s normal forwards;
+    animation: slidePageInFromLeft .8s cubic-bezier(.01,1,.22,.99) 1 0.25s normal forwards;
+}
+
+@keyframes rotatePageInFromRight {
+  0% {
+    -webkit-transform: rotateY(-90deg) translateZ(5em);
+    -ms-transform: rotateY(-90deg) translateZ(5em);
+    -o-transform: rotateY(-90deg) translateZ(5em);
+    transform : rotateY(-90deg) translateZ(5em);
+    opacity : 0;
+  }
+  30% {
+    opacity : 0.3;
+  }
+  100% {
+    -webkit-transform: rotateY(0deg) translateZ(0);
+        -ms-transform: rotateY(0deg) translateZ(0);
+        -o-transform: rotateY(0deg) translateZ(0);
+    transform : rotateY(0deg) translateZ(0);
+    opacity : 1;
+  }
+}
+
+@keyframes slidePageLeft {
+  0% {
+    left : 0;
+    -webkit-transform: rotateY(0deg) translateZ(0);
+    transform: rotateY(0deg) translateZ(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity : 0;
+    left : -150%;
+    -webkit-transform: rotateY(0deg);
+    transform : rotateY(0deg);
+  }
+}
+
+@keyframes slidePageInFromLeft {
+  0% {
+    opacity : 0;
+  }
+  30% {
+    opacity : 1;
+  }
+  100% {
+    opacity : 1;
+    left : 0;
+  }
+}
+
+@keyframes slidePageBackLeft {
+  0% {
+    opacity : 1;
+    left : 0;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  10% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  70% {
+    opacity : 1;
+  }
+  100% {
+    opacity : 0;
+    left : -150%;
+  }
+}
+
+.tile {
+  position : absolute;
+  float : left;
+  margin : 0 auto 1%;
+  color : white;
+  font-size : 1.3em;
+  text-align : center;
+  height : 8em;
+  font-weight : 300;
+  overflow : hidden;
+  cursor : pointer;
+  position : relative;
+  background-color: red;
+  color : #333;
+  transition :background-color 0.2s ease-out;
+}
+
+.tile-2Xbig {
+  height : 16.15em;
+  width : 100%;
+}
+
+.tile-big {
+  width : 100%;
+}
+
+.tile-small {
+  width : 49%;
+  margin-right: 1%;
+}
+
+.tile-small .last {
+  margin-left:0;
+  margin-right : 0;
+}
+
+.tile div {
+  position : absolute;
+  top : 0;
+  left : 0;
+  right : 0;
+  bottom : 0;
+  width : 100%;
+  height : 100%;
+  text-align: center;
+  display: table;
+  padding : 0 1em;
+  -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.tile div p {
+  display : table-cell;
+  vertical-align: middle;
+}
+
+.slideTextUp div:nth-child(2) {
+  top : 100%;
+}
+
+.slideTextUp:hover div {
+  transform : translateY(-100%);
+}
+
+.tile-1 p {
+  font-size : 1.3em;
+}
+
+
+.slideTextRight div:nth-child(2) {
+  left : -100%;
+}
+
+.slideTextRight:hover div {
+  transform : translateX(80%);
+}
+
+
+.slideTextLeft div:nth-child(2) {
+  left : 100%;
+}
+
+.slideTextLeft:hover div {
+  transform : translateX(-90%);
+}
+
+.slideTextDown div:nth-child(2) {
+  top : -100%;
+}
+
+.slideTextDown:hover div {
+  transform : translateY(100%);
+}
+
+.col1, .col2, .col3 {
+  width : 99%;
+  margin : 1em auto;
+}
+
+@media screen and (min-width : 43.75em) {
+  .col1, .col2, .col3 {
+    float : left;
+    margin-right:1%;
+    width : 49%;
+  }
+  .page-title{
+    font-size : 2.5em;
+  }
+  .page-content {
+    font-size : 1em;
+  }
+}
+
+@media screen and (min-width : 64em) {
+  .col1, .col2, .col3 {
+    float : left;
+    margin-right:.5%;
+    width : 31%;
+  }
+  .col3{
+    margin-right : 0;
+  }
+  .col1{
+    margin-left:2em;
+  }
+  .page-title{
+    font-size : 3.5em;
+  }
+}
+
+.tile-1 {
+  background-color: #56D9C9;
+  color: white
+}
+
+.tile-2 {
+  background-color: #455962;
+  color: white
+}
+
+.tile-2:hover {
+  background-color: white;
+  color: #455962
+}
+
+.tile-3 {
+  background-color: #ddd;
+  color: #455962
+}
+
+.tile-4 {
+  background-color : #80e567;
+  color: black;
+}
+
+.tile-4:hover {
+  background-color : #353d33;
+  color : white;
+}
+.tile-3:hover {
+  background-color: white;
+  color: #455962
+}
+
+.tile-5 {
+  background-color: #FCC120;
+  color: white;
+}
+
+.tile-5:hover {
+  background-color: #fff;
+  color: #FCC120
+}
+
+.tile-6 {
+  background-color: #3EC7F3;
+  color: white
+}
+
+.tile-7 {
+  background-color: #ccbb70;
+  color : black;
+}
+
+.tile-7:hover {
+  background-color : #70b6cc;
+  color : white;
+}
+
+.tile-8 {
+  background-color: white;
+  color : black;
+}
+
+.tile-8:hover {
+  background-color : black;
+  color : white;
+}
+
+.tile-9 {
+  background-color : #f26f37;
+  color : white;
+}
+
+.tile-9:hover {
+  background-color : white;
+  color : #f26f37;
+}
+
+.tile-10 {
+  background-color: #F0514A;
+  color: white
+}
