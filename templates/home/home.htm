@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Chitragupta Abhilekh Client</title>
+    <meta charset="UTF-8">
+    <script src='{% static "scripts/jquery-git2.min.js" %}'></script>
+    <script src='{% static "scripts/bootstrap.min.js" %}'></script>
+    <link rel="stylesheet" href='{% static "styles/bootstrap-theme.css" %}'>
+    <link rel="stylesheet" href='{% static "styles/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "styles/introScreen.css" %}'>
+  </head>
+  <body>
+    <div id="introScreen" class = "introScreenContainer">
+      <div id = "sideFloatingPanel" class = "sideFloatingPanel">
+        <span id = "manageAccount" class = "glyphicon glyphicon-wrench iconSpacing" aria-hidden = "true"></span>
+        <span id = "aboutUs" class = "glyphicon glyphicon-education iconSpacing" aria-hidden = "true"></span>
+        <span id = "aboutDevelopers" class = "glyphicon glyphicon-user iconSpacing"></span>
+      </div>
+      <div class = "introPanel">
+        <p>
+          Easy to use solution to every resource management requirement for small or large businesses.
+        </p>
+      </div>
+      <div class = "signUpMessage">
+        <p><small>New to CAB? It's Free and always be.</small><b class = "seperateMessage">Sign Up!</b><span class = "glyphicon glyphicon-hand-right"></span></p>
+      </div>
+      <div id="buttonToSignIn" class = "floatingButton">
+        <div id = "downButton" class = "downButton">
+          <span id = "downIconSignInScreen" class = "glyphicon glyphicon-menu-down downtoSignInScreen" aria-hidden = "true" ></span>
+        </div>
+      </div>
+      <div class = "signInContainer">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sign In</h3>
+          </div>
+          <div class="panel-body">
+            <form class="navbar-form navbar-left" role="search" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" size="20" name="username">
+              </div>
+              <br><br>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Password</span>
+                <input type="password" class="form-control" placeholder="Password" aria-descriptbedby="basic-addon1" size="20" name="password">
+              </div>
+              <br><br>
+              <button type="submit" class="btn btn-primary">Go!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="signUpContainer" class = "signUpScreen">
+        <img id="signUpImage" src='{% static "img/registerImage.png" %}'>
+        <p id="signUpDescription">
+            Register and manage your business and expenses like a real chitragupta.
+        </p>
+        <div id = "signUpForm" class="form-register">
+            <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+                <fieldset>
+                    <legend><span class="sectionNumber">1</span> Account Info</legend>
+                    <input type="text" name="username" placeholder="Name">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="signUpPasswordConfirm" placeholder="Confirm Your Password">
+                    <legend><span class="sectionNumber">2</span>Organisation Info</legend>
+                    <input type="text" name="organization" placeholder="Organisation Name">
+                    <input type="text" name="phone" placeholder="Organisation Contact number">
+                 </fieldset>
+                <input type="submit" value="Go!"/>
+            </form>
+        </div>
+    </div>
+    <script src = '{% static "scripts/mainScreen.js" %}'></script>
+  </body>
+</html>
