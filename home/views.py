@@ -29,7 +29,7 @@ def register(request):
         else:
             print(user_form.errors, profile_form.errors)
 
-    return HttpResponse("Registered")
+    return HttpResponse("Registered: %s" % registered)
 
 
 def userLogin(request):
