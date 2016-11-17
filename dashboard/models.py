@@ -14,6 +14,7 @@ class Item(models.Model):
 
     name = models.CharField(max_length=128)
     quantity = models.IntegerField()
+    price = models.FloatField()
 
     def __str__(self):
         return self.name
@@ -25,8 +26,7 @@ class Entry(models.Model):
     item = models.ForeignKey(Item)
 
     quantity = models.IntegerField()
-    date = models.DateField()
-    price = models.FloatField()
+    # date = models.DateField()
 
     def __str__(self):
         return self.name
