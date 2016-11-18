@@ -29,4 +29,4 @@ class Entry(models.Model):
     # date = models.DateField()
 
     def __str__(self):
-        return self.name
+        return self.item

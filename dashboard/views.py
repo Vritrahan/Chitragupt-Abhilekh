@@ -16,7 +16,7 @@ def index(request):
 
 def userLogout(request):
     logout(request)
-    return redirect(home.views.front)
+    return JsonResponse({'flag': True})
 
 
 def fetchCategory(request):
@@ -60,3 +60,78 @@ def totalSalesData(request):
             'price': itm.price
         })
     return JsonResponse(responseData)
+
+
+def fetchProductData(request):
+    responseData = {}
+    i = 1
+    for Cat in Category.objects.all():
+        responseData[str(Cat)] = {}
+        for itm in Item.objects.filter(cat=Cat):
+            responseData[str(Cat)][i] = {}
+            responseData[str(Cat)][i]['item'] = itm.name
+            responseData[str(Cat)][i]['price'] = itm.price
+            responseData[str(Cat)][i]['quantity'] = itm.quantity
+            i = i + 1
+    return JsonResponse(responseData)
+
+
+def getDataForRestockTable(request):
+    responseData = {'data': []}
+    for itm in Item.objects.all():
+        responseData['data'].append({
+            'item': itm.name,
+            'category': itm.cat.name,
+            'stock': itm.quantity,
+            'price': itm.price
+        })
+    return JsonResponse(responseData)
+
+
+def getAllData(request):
+    responseData = {}
+    for Cat in Category.objects.all():
+        responseData[str(Cat)] = []
+        for itm in Item.objects.filter(cat=Cat):
+            responseData[str(Cat)].append({'item': itm.name})
+    return JsonResponse(responseData)
+
+
+def outofstockitems(request):
+    responseData = {'data': []}
+    for itm in Item.objects.all():
+        if itm.quantity == 0:
+            responseData['data'].append({
+                'item': itm.name,
+                'category': itm.cat.name
+            })
+    return JsonResponse(responseData)
+
+
+def lowstockitems(request):
+    responseData = {'data': []}
+    for itm in Item.objects.all():
+        if itm.quantity < 5:
+            responseData['data'].append({
+                'item': itm.name,
+                'category': itm.cat.name,
+                'stock': itm.quantity
+            })
+    return JsonResponse(responseData)
+
+
+def checkout(request):
+    requestBody = json.loads(request.body)
+    requestList = requestBody['data']
+    i = 0
+    for ent in requestList:
+        user = user = UserProfile.objects.get(user=request.user)
+        cat = Category.objects.get(name=requestList[i]['category'])
+        itm = Item.objects.get(name=requestList[i]['item'])
+        entry = Entry(
+            user=user, cat=cat, item=itm,
+            quantity=requestList[i]['quantity'])
+        itm.quantity += requestList[i]['quantity']
+        itm.save()
+        entry.save()
+        i = i + 1

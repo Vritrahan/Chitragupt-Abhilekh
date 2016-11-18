@@ -9,4 +9,10 @@ urlpatterns = [
     url(r'^items/', views.fetchItems, name='fetchItems'),
     url(r'^categoryGraphData/', views.categoryGraphData, name='categoryGraphData'),
     url(r'^totalSalesData/', views.totalSalesData, name='totalSalesData'),
+    url(r'^fetchProductData/', views.fetchProductData, name='fetchProductData'),
+    url(r'^getDataForRestockTable/', views.getDataForRestockTable, name='getDataForRestockTable'),
+    url(r'^getAllData/', views.getAllData, name='getAllData'),
+    url(r'^outofstockitems/', views.outofstockitems, name='outofstockitems'),
+    url(r'^lowstockitems/', views.lowstockitems, name='lowstockitems'),
+    url(r'^checkout/', views.checkout, name='checkout'),
 ]
